@@ -1,0 +1,36 @@
+<section class="home" ng-controller="HomeTimelineCtrl">
+    <script>
+      var lang = "{{lang}}";
+    </script>
+    <nav>
+        <ul>
+            <li ng-click="timeline_by_filter('lastes')" ng-class="{active: type_list=='lastes'}">{{getTerm i18n 'latest_recipes' lang}}</li>
+            <li ng-click="timeline_by_filter('tasty')" ng-class="{active: type_list=='tasty'}">{{getTerm i18n 'tasty' lang}}</li>
+            <li ng-click="timeline_by_filter('views')" ng-class="{active: type_list=='views'}">{{getTerm i18n 'views' lang}}</li>
+        </ul>
+    </nav>
+    <div class="inner">
+        <h1 style="display:none;">{{getTerm i18n 'motto' lang}}</h1>
+        <!-- ngRepeat: recipe in list_recipes -->
+        <div class="timeline">
+            <div ng-repeat="recipe in list_recipes" class="recipe">
+                <div class="recipe-author">
+                    <a href="/[[recipe.ot_name]]/" class="author-name">[[ recipe.user.name ]]</a>
+                    <a href="/[[recipe.ot_name]]/" class="author-img"><img src="http://opentaste.eu[[ recipe.user.image_show ]]" alt="" /></a>
+                    <div class="recipe-date">[[ recipe.created | date:'mediumDate' ]]</div>
+                </div>
+                <div class="recipe-image">
+                    <a href="/[[recipe.ot_name]]/[[ recipe.url[lang] ]]/" data-id="[[ recipe._id ]]" class="">
+                        <div class="main-img" style="background-image:url(http://opentaste.eu/static/recipes/[[recipe._id]]/[[ recipe.images[recipe.images.length-1].url[1] ]]);">
+                            <div class="main-padder"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="recipe-info">
+                    <div> <a href="/[[recipe.ot_name]]/[[ recipe.url[lang] ]]/" data-id="[[ recipe._id ]]" class="name">[[ recipe.name[lang] ]]</a><br/></div>
+                </div>
+                <div class="recipe-social"></div>
+            </div>
+        </div>
+    </div>
+</section>

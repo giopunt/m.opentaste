@@ -1,0 +1,123 @@
+/*font families*/
+$font-stack:    'Arial','Helvetica Neue','Helvetica',sans-serif;
+/*font colours*/
+$primary-color: #333;
+/*backgrounds colours*/
+/*dimesions*/
+
+@import 'mixin';
+@import 'reset';
+
+html, body {
+  background-color: #fffaf1;
+  color: $primary-color;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 320px;
+  font: 100% $font-stack;
+}
+
+#login-form {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#login-form input[type="text"], #login-form input[type="password"] {
+    max-width: 300px;
+    display:block;
+    margin-top: 5px;
+}
+
+.inner {
+    max-width: 60em;
+    min-width: 240px;
+    margin: 0 auto;
+    width: 95%;
+    padding-top: 10px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #b64;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 0 10px;
+    text-rendering: optimizelegibility
+}
+
+p {
+    margin: 0 0 9px;
+    font-size: 13px;
+    line-height: 18px
+}
+
+.container {
+    min-height: 500px;
+    height: 100%;
+    z-index: 0;
+}
+
+.clearfix,.baseContent {
+    *zoom: 1
+}
+
+.clearfix:before,.baseContent:before,.clearfix:after,.baseContent:after {
+    content: "";
+    display: table
+}
+
+.clearfix:after,.baseContent:after {
+    clear: both
+}
+
+.clear {
+    clear: both
+}
+
+@import 'header';
+@import 'footer';
+@import 'buttons';
+@import 'home';
+@import 'about';
+@import 'timeline';
+@import 'recipe';
+@import 'search';
+@import 'profile';
+@import 'slide_menu';
+
+.marginB10 {
+    margin-bottom: 10px;
+}
+.marginB20 {
+    margin-bottom: 20px;
+}
+.paddingB5 {
+    padding-bottom: 5px;
+}
+
+.hide {display:none;}
+
+input,textarea {
+    @include box-shadow(none);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s
+}
+
+input,textarea,select,.uneditable-input {
+    @include border-radius(3px);
+    display: inline-block;
+    width: 210px;
+    height: 18px;
+    padding: 4px;
+    margin-bottom: 9px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #555555;
+    border: 1px solid #ccc
+}

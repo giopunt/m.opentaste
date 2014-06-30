@@ -1,0 +1,135 @@
+// _slide_menu.scss
+
+#s_menu {
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #3b4040;
+  z-index: 0;
+  color: #fff;
+  overflow: hidden;
+  height: 600px;
+  width: 240px;
+  @include transition-property(opacity);
+  @include transition-duration(100ms);
+  @include transition-timing-function(ease);
+
+  opacity: 0;
+
+  &.open {
+      height: 100%;
+      opacity: 1;
+  }
+
+  a,  a:active, a:visited, a:hover {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      padding: 10px 0;
+  }
+
+  ul{
+      list-style: none;
+      overflow-y: scroll;
+  }
+
+  ul li {
+      display: block;
+      text-align: center;
+      padding: 5px 0;
+      border-top: 1px solid #414646;
+      border-bottom: 1px solid #313636;
+      background-image: url('/img/arrowwb.png');
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-size: 30px;
+  }
+
+  & > .logo {
+      width: 100%;
+      text-align: center;
+      height: 47px;
+      background-image: url('/img/opentitle.png');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100px;
+      border-bottom: 1px solid #313636;
+  }
+
+  & > .spacer {
+    height: 15px;
+    background: #525656;
+    border-top: 1px solid #313636;
+  }
+
+}
+
+#s_search {
+    background: #fffaf1;
+    height: 50px;
+    border-bottom: 1px solid #fea14d;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+    @include transform(translate3d(0, 0px, 0));
+    @include transition-property(translate3d(0, 0px, 0));
+    @include transition-duration(400ms);
+    @include transition-timing-function(ease);
+
+    &.open {
+        opacity: 1;
+        z-index: 1;
+        @include transform(translate3d(0, 47px, 0));
+    }
+}
+
+#s_mask {
+    z-index: 10;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include transform(translate3d(0, 0px, 0));
+    @include transition-property(transform);
+    @include transition-duration(400ms);
+    @include transition-timing-function(cubic-bezier(.43, -0.08, .57, 1));
+    opacity: 0;
+
+    &.open {
+        @include transform(translate3d(240px, 0, 0));
+        opacity: 1;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.11);
+    }
+}
+
+.container {
+    @include transform(translate3d(0, 0px, 0));
+    @include transition-property(transform);
+    @include transition-duration(400ms);
+    @include transition-timing-function(cubic-bezier(.43, -0.08, .57, 1));
+    z-index: 0;
+    display: block;
+    background-color: #FFFAF1;
+    overflow-x: hidden;
+}
+
+#header,
+#footer {
+    @include transform(translate3d(0, 0px, 0));
+    @include transition-property(transform);
+    @include transition-duration(400ms);
+    @include transition-timing-function(cubic-bezier(.43, -0.08, .57, 1));
+    z-index: 2;
+    display: block;
+}
+
+.container.open,
+#header.open,
+#footer.open {
+    @include transform(translate3d(240px, 0, 0));
+}

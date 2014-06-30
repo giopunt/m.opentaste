@@ -1,0 +1,14 @@
+{
+	"name": "opentaste",
+	"description": "OpenTaste mobile app version",
+	"version": "0.0.1",
+	"dependencies": {
+		"express": "3.x",
+		"merge-descriptors": "0.0.2",
+    "i18n":"*",
+    "request":"*",
+    "jsdom":"*",
+		"hbs":"*",
+		"node-sass":"*"
+	}
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="http://m.opentaste.eu" rel="canonical">
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="img/app-icon.png" />
+    <meta name="description" content="Benvenuto su OpenTaste, il social network dove puoi trovare e condividere ricette">
+
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/img/apple-icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/apple-icons/apple-touch-icon-114x114.png" />
+
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body ng-app="OptApp" ng-controller="MenuCntrl" data-lang="{{lang}}">
+    <div id="s_menu" style="opacity:0;" ng-class="{open: show_menu==true};">
+        <div class="logo">
+          <span class="hide">MENU</span>
+        </div>
+        <ul>
+            <li><a href="/" title="Opentaste - Share your recipe!">Home</a></li>
+            <!--<li><a href="/login" >Login</a></li>-->
+            <li><a href="/search">{{getTerm i18n 'search' lang}}</a></li>
+            <li><a href="/about">{{getTerm i18n 'about' lang}}</a></li>
+            {{#compare lang 'it'  operator='=='}}
+            <li><a href="/lang/en">English</a></li>
+            {{/compare}}
+            {{#compare lang 'en'  operator='=='}}
+            <li><a href="/lang/it">Italiano</a></li>
+            {{/compare}}
+        </ul>
+    </div>
+
+    <div id="placeholder"></div>
+    <div id="s_mask" ng-class="{open: show_menu==true}" touch-click="show_menu=false" ng-click="show_menu=false">
+    </div>
+    <div id="s_search" ng-class="{open: show_search==true && show_menu!=true}" class="search">
+        <div class="inner">
+            <form action="/search" method="get">
+                <input type="text" name="term" class="search_recipe" value="" placeholder="{{getTerm i18n 'search_placeholder' lang}}" />
+                <button type="submit" class="button-submit">{{getTerm i18n 'go' lang}}</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="header" ng-class="{open: show_menu==true}">
+        <header class="clearfix" ng-click="closeMenu();">
+            <nav class="clearfix">
+                <ul class="left-menu">
+                    <li>
+                        <h1><a href="/" title="Opentaste - Share your recipe!" class="home-link" ng-click="closeMenu();$event.stopPropagation();"></a></h1>
+                    </li>
+                </ul>
+                <ul class="right-menu">
+                    <li>
+                        <a class="btn-menu" ng-click="show_menu = !show_menu;$event.stopPropagation();"></a>
+                    </li>
+                    <!--<li class="login"><a href="/login" title="Login" class="button-login">Login</a></li>-->
+                    <li class="search"><a href="/search" title="Login" class="button-search" ng-click="openSearch();$event.stopPropagation();$event.preventDefault();">{{getTerm i18n 'search' lang}}</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div ng-controller="ContainerCntrl">
+        <div class="container" ng-class="{open: show_menu==true}" ng-click="closeMenu()">
+
+            {{{body}}}
+
+        </div>
+        <!-- /container -->
+    </div>
+
+
+    <div id="footer" ng-class="{open: show_menu==true}" ng-click="closeMenu()">
+        <footer>
+            <ul>
+                <li>© 2014 Opentaste</li>
+                <li><a href="/about">about</a></li>
+                <li><a href="/about/privacy">privacy</a></li>
+                <li><a href="/lang/en">en</a></li>
+                <li><a href="/lang/it">ita</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <!-- Libreries -->
+    <script src="/js/jquery-2.0.2.min.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/angular-touch.min.js"></script>
+    <script src="/js/hammer.js"></script>
+    <!-- Opentaste Application -->
+    <script src="/js/app.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            window.scrollTo(0, 0);
+        }
+        setTimeout(function () {
+            var menu = document.getElementById('s_menu');
+            $(menu).attr('style', '');
+            Hammer(menu).on("swipe, drag", function(event) {
+              alert()
+              event.preventDefault();
+              return false;
+            });
+        }, 300);
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-48716107-1', 'opentaste.eu');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

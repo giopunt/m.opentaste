@@ -1,0 +1,46 @@
+// _home.scss
+
+.home {
+
+  margin-top: -5px;
+
+  nav {
+      width: 100%;
+      max-width:60em;
+      margin:0 auto;
+      height: 51px;
+      @include border-radius(0 0 3px 3px);
+      -webkit-background-clip: padding;
+      -moz-background-clip: padding;
+      background-clip: padding-box;
+      background-color: #eceaea
+  }
+
+  nav ul {
+      margin: 0;
+      padding: 11px 0 0 9px
+  }
+
+  nav li {
+      @include border-radius(3px 3px 0 0);
+      -webkit-background-clip: padding;
+      -moz-background-clip: padding;
+      background-clip: padding-box;
+      float: left;
+      color: #464646;
+      font-size: 13px;
+      width: 33.33%;
+      max-width:230px;
+      padding: 10px 0 0 0;
+      text-align: center;
+      cursor: pointer;
+      display:inline-block;
+      height: 30px;
+  }
+
+  nav li.active {
+      background-color: #f7f7f7;
+      font-weight: bold
+  }
+
+}

@@ -1,0 +1,26 @@
+<div class="inner">
+    <h1>Login</h1>
+    <div class="login-actions">
+        <div id="btn-facebook" class="blue-btn button-submit">Sign in with Facebook</div>
+        <div id="bth-google" class="red-btn button-submit">Sign in with Google</div>
+    </div>
+    
+    <div>
+        <form action="/login" name="login" id="login-form">
+            <div class="marginB10">
+                <label>Username or email</label>
+                <input type="text" name="ot_name" value="" id="login_page_ot_name" autocomplete="off" size="100" tabindex="110" style="width:95%;">
+            </div>
+            <div class="marginB10">
+                <label>Password</label>
+                <input type="password" name="pass" value="" id="login_page_pass" autocomplete="off" size="50" tabindex="120" style="width:95%;">
+            </div>
+            <div class="marginB20">
+                <input type="checkbox" name="permanent" value="ok" tabindex="130" id="permanent"> <label for="permanent">Remember me</label>
+            </div>
+            <div>
+                <input type="submit" name="submit" value="Sign in" class="button-submit" tabindex="200" style="width:100%;">
+            </div>
+        </form>
+    </div>
+</div>

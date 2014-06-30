@@ -1,0 +1,37 @@
+<section class="searchPage" ng-controller="SearchTimelineCtrl">
+    <div class="inner">
+        {{#if term}}
+            <h2>{{getTerm i18n 'we_found' lang}} {{total}} {{getTerm i18n 'results_for' lang}} {{term}}.</h2>
+            <!-- ngRepeat: recipe in list_recipes -->
+            <div class="timeline">
+                {{#each content.recipes}}
+                    <div class="recipe">
+                        <div class="recipe-author">
+                            <a href="/{{this.ot_name}}/" class="author-name">{{this.user.name}}</a>
+                            <a href="/{{this.ot_name}}/" class="author-img"><img src="http://opentaste.eu{{user.image_show}}" alt="" /></a>
+                        </div>
+                        <div class="recipe-image">
+                            <a href="/{{this.ot_name}}/{{getTerm this 'url' ../lang}}/" data-id="{{this._id}}" class="">
+                                <div class="main-img" style="background-image:url(http://opentaste.eu/static/recipes/{{this._id}}/{{getLastImg this.images}});">
+                                    <div class="main-padder"></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="recipe-info">
+                            <div> <a href="/{{this.ot_name}}/{{getTerm this 'url' ../lang}}/" data-id="{{this._id}}" class="name">{{getTerm this 'name' ../lang}}</a><br/></div>
+                        </div>
+                        <div class="recipe-social"></div>
+                    </div>
+                {{/each}}
+            </div>
+        {{else}}
+            <div class="search-page">
+                <form action="/search" method="get">
+                    <h2>{{getTerm i18n 'search_recipes' lang}}</h2>
+                    <input type="text" name="term" class="search_recipe" value="" placeholder="{{getTerm i18n 'search_placeholder' lang}}"/>
+                    <button type="submit" class="button-submit">{{getTerm i18n 'go' lang}}</button>
+                </form>
+            </div>
+        {{/if}}
+    </div>
+</section>

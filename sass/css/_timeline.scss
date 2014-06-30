@@ -1,0 +1,101 @@
+// _timeline.scss
+
+.timeline {
+
+    max-width: 400px;
+    margin: 0 auto;
+
+    .recipe {
+        margin-bottom: 20px;
+        margin-top: 5px;
+        position: relative;
+    }
+
+    .recipe-author {
+
+        height: 45px;
+        max-width: 378px;
+        position: relative;
+
+
+        .author-name {
+            position: absolute;
+            left: 50px;
+            top: 5px;
+            text-decoration: none;
+            font-size:0.9em;
+            color: #8b3d13;
+        }
+
+        .author-img {
+            position: absolute;
+            left: 0px;
+            top: 0;
+        }
+
+        .author-img  img {
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            @include border-radius(4px);
+        }
+
+        .recipe-date {
+            position: absolute;
+            left: 51px;
+            bottom: 7px;
+            font-size: 0.7em;
+            color: #554433;
+        }
+    }
+
+    .recipe {
+
+        .name {
+            color: #554433;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        .recipe-image {
+            position: relative;
+            max-width: 378px;
+            max-height: 243px;
+            @include box-sizing(border-box !important);
+        }
+
+        .main-img {
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            left: -1px;
+            @include border-radius(3px 3px 0 0);
+            background-size: 100% 100%;
+            max-height: 243px;
+        }
+
+        .main-padder {
+            padding-bottom:64.28%;
+        }
+
+        .main-img:after {
+            position: absolute;
+            display: block;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            z-index: 1;
+            content: '';
+        }
+
+    }
+
+    .recipe-info {
+        padding: 5px 10px;
+        background: #ecebea;
+        max-width: 358px;
+        @include border-radius(0 0 3px 3px);
+    }
+
+}

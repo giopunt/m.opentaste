@@ -1,0 +1,34 @@
+// _footer.scss
+
+/*font colours*/
+$footer-color: #51514f;
+/*backgrounds colours*/
+$footer-bg: #dcdcdc;
+/*dimesions*/
+$footer-height: 30px;
+
+
+#footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $footer-height;
+    font-size: 0.8em;
+    color: $footer-color;
+    background-color: $footer-bg;
+    opacity: 0.6;
+
+    ul {
+      max-width: 60em;
+      margin: 0 auto;
+    }
+
+    ul li {
+        display: inline-block;
+        padding: 7px 5px;
+    }
+
+    a, a:active, a:visited {
+        color: $primary-color;
+    }
+}

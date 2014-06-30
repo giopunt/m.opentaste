@@ -1,0 +1,29 @@
+// _search.scss
+
+.search {
+
+  .new_ingr_search, .search_recipe {
+      float: left;
+      color: #878787;
+      font: 14px "Helvetica Neue",Arial,sans-serif;
+      margin: 0;
+      padding: 6px 5px;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.8)
+  }
+
+  .search_recipe {
+      margin-bottom: 5px;
+      width: 75%
+  }
+
+  .button-submit {
+      width: 15%;
+      margin-left: 10px;
+  }
+
+}
+
+.search-page .button-submit {
+    margin-left: 10px;
+    width: 60px;
+}

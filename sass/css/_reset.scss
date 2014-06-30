@@ -1,0 +1,83 @@
+// _reset.scss
+
+.hideAccessibly {
+  position:absolute;
+  left:-9999em;
+}
+
+a.hideAccessibly:focus {
+  background:none repeat scroll 0 0 #000;
+  color:#fff;
+  left:50px;
+  padding:.75em 1em 2em;
+  z-index:9;
+}
+
+a,abbr,acronym,address,applet,article,
+aside,audio,b,big,blockquote,body,canvas,
+caption,center,cite,code,dd,del,details,
+dfn,div,dl,dt,em,embed,fieldset,figcaption,
+figure,footer,form,h1,h2,h3,h4,h5,h6,header,
+hgroup,html,i,iframe,img,ins,kbd,label,legend,
+li,mark,menu,nav,object,ol,output,p,pre,q,
+ruby,s,samp,section,small,span,strike,strong,
+sub,summary,sup,table,tbody,td,tfoot,th,thead,
+time,tr,tt,u,ul,var,video {
+  border:0;
+  margin:0;
+  font:inherit;
+  padding:0;
+  vertical-align:baseline;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section {
+  display:block;
+}
+
+audio,canvas,video{
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+}
+
+audio:not([controls]){
+  display:none;
+}
+
+body{
+  line-height:1;
+}
+
+ol,ul{
+  list-style:none;
+}
+
+blockquote,q{
+  quotes:none;
+}
+
+blockquote:after,blockquote:before,q:after,q:before{
+  content:'';
+  content:none;
+}
+
+table{
+  border-spacing:0;
+}
+
+b,strong{
+  font-weight:700;
+}
+
+em,i{
+  font-style:italic;
+}
+
+input,li,select,table,textarea{
+  font-family:arial,verdana,sans-serif;
+  font-size:100%;
+}
+
+html{
+  overflow-y:scroll;
+}

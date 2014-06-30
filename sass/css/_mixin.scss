@@ -1,0 +1,65 @@
+// _mixin.scss
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow($value) {
+  -webkit-box-shadow: $value;
+     -moz-box-shadow: $value;
+      -ms-box-shadow: $value;
+       -o-box-shadow: $value;
+          box-shadow: $value;
+}
+
+@mixin appearance($value) {
+  -webkit-appearance: $value;
+     -moz-appearance: $value;
+      -ms-appearance: $value;
+       -o-appearance: $value;
+          appearance: $value;
+}
+
+@mixin box-sizing($value) {
+  -webkit-box-sizing: $value;
+     -moz-box-sizing: $value;
+      -ms-box-sizing: $value;
+       -o-box-sizing: $value;
+          box-sizing: $value;
+}
+
+@mixin transform($value) {
+  -webkit-transform: $value;
+     -moz-transform: $value;
+      -ms-transform: $value;
+       -o-transform: $value;
+          transform: $value;
+}
+
+@mixin transition-property($value) {
+  -webkit-transition-property: -webkit-$value;
+     -moz-transition-property:    -moz-$value;
+      -ms-transition-property:     -ms-$value;
+       -o-transition-property:      -o-$value;
+          transition-property:         $value;
+}
+
+@mixin transition-duration($value) {
+  -webkit-transition-duration: $value;
+     -moz-transition-duration: $value;
+      -ms-transition-duration: $value;
+       -o-transition-duration: $value;
+          transition-duration: $value;
+}
+
+@mixin transition-timing-function($value) {
+  -webkit-transition-timing-function: $value;
+     -moz-transition-timing-function: $value;
+      -ms-transition-timing-function: $value;
+       -o-transition-timing-function: $value;
+          transition-timing-function: $value;
+}

@@ -1,0 +1,47 @@
+// _about.scss
+
+.about {
+
+   a {
+      color: #51514F;
+      display: block;
+      overflow: hidden;
+      width: 100%;
+      &:hover {
+          color: #51514F
+      }
+  }
+
+  h4 {
+      display: block;
+      font-size: 12px;
+      margin: 2px 0;
+      padding: 0;
+  }
+
+  p {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 22px;
+      width: 90%;
+  }
+
+  li {
+      float: left;
+      margin: 0 16px 12px 0;
+      overflow: hidden;
+  }
+
+  img {
+      height: 80px;
+      margin-right: 10px;
+  }
+
+}
+
+.about_images p {
+    font-size: 12px;
+    line-height: 19px;
+    margin: 0;
+    width: 80%;
+}

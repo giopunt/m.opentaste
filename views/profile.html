@@ -1,0 +1,28 @@
+<div class="inner profile-page">
+    <div class="user-info">
+        <h1 class="user-name">{{user.name}}</h1>
+        <div class="user-img">
+            <img alt="" src="http://opentaste.eu{{user.image_show}}"/>
+            <h2 class="user-desc">{{user.description}}</h2>
+            <div class="clear"></div>
+        </div>
+        <h3 class="user-count">Recipes {{user.recipes_count}} {{#if user.location}}<br/>{{user.location}}{{/if}} {{#if user.web}} - <a href="{{user.web}}" target="_blank">{{user.web}}</a>{{/if}}</h3>
+    </div>
+    <div class="timeline">
+        {{#each content.recipes}}
+            <div class="recipe">
+              <div class="recipe-image">
+                    <a href="/{{this.user.ot_name}}/{{getTerm this 'url' ../lang}}/" data-id="{{this._id}}" class="">
+                        <div class="main-img" style="background-image:url(http://opentaste.eu/static/recipes/{{this._id}}/{{getLastImg this.images}});">
+                            <div class="main-padder"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="recipe-info">
+                    <div> <a href="/{{this.ot_name}}/{{getTerm this 'url' ../lang}}/" data-id="{{this._id}}" class="name">{{getTerm this 'name' ../lang}}</a><br/></div>
+                </div>
+                <div class="recipe-social"></div>
+            </div>
+        {{/each}}
+    </div>
+</div>

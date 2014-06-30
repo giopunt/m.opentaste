@@ -1,0 +1,24 @@
+#Google Search Engine Robot
+User-agent: Googlebot
+# Crawl-delay: 10 -- Googlebot ignores crawl-delay ftl
+Allow: /*?*_escaped_fragment_
+Disallow: /*?
+
+#Yahoo! Search Engine Robot
+User-Agent: Slurp
+Crawl-delay: 1
+Disallow: /*?
+
+#Microsoft Search Engine Robot
+User-Agent: msnbot
+Disallow: /*?
+
+# Every bot that might possibly read and respect this file.
+User-agent: *
+Disallow: /*?
+Disallow: /oauth
+Disallow: /1/oauth
+
+# Independent of user agent. Links in the sitemap are full URLs using https:// and need to match
+# the protocol of the sitemap.
+Sitemap: http://opentaste.eu/static/sitemap.xml

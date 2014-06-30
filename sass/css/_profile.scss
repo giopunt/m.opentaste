@@ -1,0 +1,48 @@
+// _profile.scss
+
+.profile-page {
+
+  .user-info * {
+    color: #222;
+  }
+
+  .user-name {
+    color: #b64;
+  }
+
+  .user-count {
+    color: #554433;
+  }
+
+  .user-img {
+    margin-bottom: 10px;
+
+    img {
+      float: left;
+      margin-right: 10px;
+      border-radius: 10px;
+      width: 110px;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+  }
+
+  .user-desc {
+    float: left;
+    font-size: 1em;
+    width: 60%;
+  }
+
+  .user-count a {
+    color:#c6905c;
+    text-decoration: none;
+  }
+
+  h3 {
+    font-size: 0.9em;
+  }
+
+}
